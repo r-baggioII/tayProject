@@ -3,15 +3,21 @@
     flex-direction: column;
   }
 
-  .episode {
+  .track {
     min-width: max-content;
     margin-bottom: .8rem;
     padding: .8rem 1rem;
     border-radius: 10px;
     border: 0;
-    background: #191414;
+    background: #462342;
     color: #fff;
     cursor: pointer;
+  }
+  .tracks {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+
   }
 
   .episode:hover {
@@ -25,3 +31,48 @@
       gap: 1rem;
     }
   }
+
+  #play-button {
+    height: 40px;
+    width: 70px;
+    padding: 20px;
+    border: 10px;
+    border-radius: 10px;
+    background: #1db954;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  #pause-button {
+    height: 40px;
+    width: 70px;
+    padding: 20px;
+    border: 10px;
+    border-radius: 10px;
+    background: #1db954;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  #play-button:hover {
+    background: #1aa34a;
+  }
+  .controls {
+    display: flex;
+    gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      justify-content: center;
+      margin-left: 690px;
+      margin-right: auto;
+
+  }
+  
