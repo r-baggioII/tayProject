@@ -29,50 +29,51 @@
       display: flex;
       flex-direction: row;
       gap: 1rem;
+      background-color: #BEA7C4; 
+      font-family: Arial, sans-serif;
+      color: #333;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
   }
 
-  #play-button {
-    height: 40px;
-    width: 70px;
-    padding: 20px;
-    border: 10px;
-    border-radius: 10px;
-    background: #1db954;
-    color: #fff;
+  #next-button {
+    background-color: #62466B; /* Spotify Green */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 50px; /* Rounded corners */
+    padding: 10px 20px; /* Size */
+    font-size: 16px; /* Text size */
+    font-weight: bold; /* Bold text */
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-  #pause-button {
-    height: 40px;
-    width: 70px;
-    padding: 20px;
-    border: 10px;
-    border-radius: 10px;
-    background: #1db954;
-    color: #fff;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 150px;
   }
   
-  #play-button:hover {
-    background: #1aa34a;
+  #next-button:hover {
+    background-color: #1aa34a; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
   }
-  .controls {
-    display: flex;
-    gap: 1rem;
-      justify-content: center;
-      align-items: center;
-      justify-content: center;
-      margin-left: 690px;
-      margin-right: auto;
+  
+  #next-button:active {
+    background-color: #62466B; /* Even darker green on click */
+    transform: scale(0.95); /* Slightly smaller on click */
+  }
+  
+  #message {
+    font-size: 2em;
+    white-space: pre;
+    min-width: 10ch; /* Reserves space for at least 10 characters */
+    text-align: center; /* Aligns the message in the center */
+  }
+.controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Centers the button */
+}
 
-  }
   
