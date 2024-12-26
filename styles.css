@@ -41,7 +41,7 @@
 
   #next-button {
     background-color: #62466B; /* Spotify Green */
-    color: #fff; /* White text */
+    color: #fbe5ff; /* White text */
     border: none;
     border-radius: 50px; /* Rounded corners */
     padding: 10px 20px; /* Size */
@@ -49,7 +49,10 @@
     font-weight: bold; /* Bold text */
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-left: 150px;
+    margin-left: 0px;
+    font-family: 'Playfair Display', serif;
+    font-size: large;
+
   }
   
   #next-button:hover {
@@ -62,12 +65,30 @@
     transform: scale(0.95); /* Slightly smaller on click */
   }
   
-  #message {
-    font-size: 2em;
-    white-space: pre;
-    min-width: 10ch; /* Reserves space for at least 10 characters */
-    text-align: center; /* Aligns the message in the center */
+  #message-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto; /* Width of the box */
+    height: auto; /* Height of the box */
+    border: 2px solid #BEA7C4;
+    background-color: #BEA7C4;
+    border-radius: 10px;
+    top: 30%; /* Adjust the top position to align above the next button */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
   }
+
+  #message {
+    font-size: 2.5rem;
+    color: #62466B;
+    white-space: nowrap;
+    font-family: 'Playfair Display', serif;
+    font-weight: bolder;
+}
+
 .controls {
   display: flex;
   gap: 1rem;
