@@ -16,6 +16,31 @@
   <div class="controls">
     <button id="next-button">Play Random Song</button>
   </div>
+  <div class = "tableContainer">
+    <table>
+      <tr>
+          <th>Field</th>
+          <th>Selection</th>
+      </tr>
+      <tr>
+          <td>Album</td>
+          <td>
+              <select id="album" onchange="updateTracks()">
+                  <option value="">Select Album</option>
+              </select>
+          </td>
+      </tr>
+      <tr>
+          <td>Track</td>
+          <td>
+              <select id="track" disabled>
+                  <option value="">First select an album</option>
+              </select>
+          </td>
+      </tr>
+    </table>
+  </div>
+
   
   
 

@@ -189,51 +189,62 @@ window.onSpotifyIframeApiReady = (IFrameAPI) => {
 
 
     // Array of albums
-  const albums = [torturedPoets, evermore, folklore, red, reputation, speakNow, T1989]; // Array of albums
+    const albums = [torturedPoets, evermore, folklore, red, reputation, speakNow, T1989];
 
-  let playbackTimeout;
-
-  // Function to pick a random album
-  const getRandomAlbumIndex = () => {
-    return Math.floor(Math.random() * albums.length);
-  };
-
-  // Function to pick a random track
-  const getRandomTrackIndex = () => {
-    const randomAlbumIndex = getRandomAlbumIndex();
-    return Math.floor(Math.random() * albums[randomAlbumIndex].length);
-  };
-
-  // Controller callback
-  const callback = (EmbedController) => {
-    // Function to play a random track
-    const playRandomTrack = () => {
-      const currentAlbumIndex = getRandomAlbumIndex(); // Get a new random album index
-      const currentTrackIndex = getRandomTrackIndex(); // Get a new random track index
-      const randomAlbum = albums[currentAlbumIndex]; // Get the random album
-      const randomTrack = randomAlbum[currentTrackIndex]; // Get the random track from the album
-      EmbedController.loadUri(randomTrack); // Load the random track
-      EmbedController.play(); // Start playing
-      clearTimeout(playbackTimeout); // Clear any previous timeout
-      playbackTimeout = setTimeout(() => {
-        EmbedController.pause(); // Pause after 5 seconds
-      }, 5000);
-    };
-
-    // Ensure the Next button exists
-    const nextButton = document.getElementById('next-button');
-    if (!nextButton) {
-      console.error("Next button element not found.");
-      return;
-    }
-
-    // Add event listener for Next button to play a random track
-    nextButton.addEventListener('click', playRandomTrack);
-    // Create the controller with options and callback
+    let playbackTimeout;
+    let currentController;
   
+    // Function to pick a random album
+    const getRandomAlbumIndex = () => {
+      return Math.floor(Math.random() * albums.length);
+    };
+  
+    // Function to pick a random track from a specific album
+    const getRandomTrackFromAlbum = (albumIndex) => {
+      return Math.floor(Math.random() * albums[albumIndex].length);
+    };
+  
+    // Controller callback
+    const callback = (EmbedController) => {
+      currentController = EmbedController;
+  
+      // Function to play a random track
+      const playRandomTrack = () => {
+        // Clear any existing timeout
+        if (playbackTimeout) {
+          clearTimeout(playbackTimeout);
+        }
+  
+        // Stop any currently playing track
+        currentController.pause();
+  
+        // Get random album and track
+        const currentAlbumIndex = getRandomAlbumIndex();
+        const currentTrackIndex = getRandomTrackFromAlbum(currentAlbumIndex);
+        const randomTrack = albums[currentAlbumIndex][currentTrackIndex];
+  
+        // Load and play the new track
+        currentController.loadUri(randomTrack);
+        currentController.play();
+  
+        // Set timeout to stop after 5 seconds
+        playbackTimeout = setTimeout(() => {
+          currentController.pause();
+        }, 5000);
+      };
+  
+      // Ensure the Next button exists and add event listener
+      const nextButton = document.getElementById('next-button');
+      if (nextButton) {
+        nextButton.addEventListener('click', playRandomTrack);
+      } else {
+        console.error("Next button element not found.");
+      }
+    };
+  
+    // Create the controller
+    IFrameAPI.createController(element, options, callback);
   };
-  IFrameAPI.createController(element, options, callback);
-}; 
 
 const message = "Guess the song!! (Taylor Swift Edition)"; // The message to display
 const displayElement = document.getElementById('message');
@@ -259,5 +270,194 @@ function displayNextLetter() {
 // Start the animation
 displayNextLetter();
 
+//Albums and tracks selection 
 
+// Sample music database
+const musicDatabase = {
+  "Taylor Swift": [
+    "Tim McGraw",
+    "Picture to Burn",
+    "Teardrops on My Guitar",
+    "A Place in This World",
+    "Cold as You",
+    "The Outside",
+    "Tied Together with a Smile",
+    "Stay Beautiful",
+    "Should've Said No",
+    "Mary's Song (Oh My My My)",
+    "Our Song",
+    "I'm Only Me When I'm with You",
+    "Invisible",
+    "A Perfectly Good Heart",
+    "Teardrops on My Guitar"
+  ],
+  "Fearless (Taylor's Version)": [
+    "Fifteen",
+    "Love Story",
+    "Hey Stephen",
+    "White Horse",
+    "You Belong with Me",
+    "Breathe",
+    "Tell Me Why",
+    "You're Not Sorry",
+    "The Way I Loved You",
+    "Forever & Always",
+    "The Best Day",
+    "Change",
+    "Jump Then Fall",
+    "Untouchable",
+    "Forever & Always (Piano Version)",
+    "Come In with the Rain",
+    "Superstar",
+    "The Other Side of the Door",
+    "Today Was a Fairytale",
+    "You All Over Me",
+    "Mr. Perfectly Fine",
+    "We Were Happy",
+    "That's When",
+    "Don't You",
+    "Bye Bye Baby"
+  ],
+  "Speak Now (Taylor's Version)": [
+    "Mine",
+    "Sparks Fly",
+    "Back to December",
+    "Speak Now",
+    "Dear John",
+    "Mean",
+    "The Story of Us",
+    "Never Grow Up",
+    "Enchanted",
+    "Better than Revenge",
+    "Innocent",
+    "Haunted",
+    "Last Kiss",
+    "Long Live",
+    "Ours",
+    "Superman",
+    "Electric Touch (featuring Fall Out Boy)",
+    "When Emma Falls in Love",
+    "I Can See You",
+    "Castles Crumbling (featuring Hayley Williams)",
+    "Foolish One",
+    "Timeless"
+  ],
+  "Red (Taylor's Version)": [
+    "State of Grace",
+    "Red",
+    "Treacherous",
+    "I Knew You Were Trouble",
+    "All Too Well",
+    "22",
+    "I Almost Do",
+    "We Are Never Ever Getting Back Together",
+    "Stay Stay Stay",
+    "The Last Time (featuring Gary Lightbody of Snow Patrol)",
+    "Holy Ground",
+    "Sad Beautiful Tragic",
+    "The Lucky One",
+    "Everything Has Changed (featuring Ed Sheeran)",
+    "Starlight",
+    "Begin Again",
+    "The Moment I Knew",
+    "Come Back... Be Here",
+    "Girl at Home",
+    "State of Grace (acoustic version)",
+    "Ronan",
+    "Better Man",
+    "Nothing New (featuring Phoebe Bridgers)",
+    "Babe",
+    "Message in a Bottle",
+    "I Bet You Think About Me (featuring Chris Stapleton)",
+    "Forever Winter",
+    "Run (featuring Ed Sheeran)",
+    "The Very First Night",
+    "All Too Well (10 Minute Version)"
+  ],
+  "1989 (Taylor's Version)": [
+    "Welcome to New York",
+    "Blank Space",
+    "Style",
+    "Out of the Woods",
+    "All You Had to Do Was Stay",
+    "Shake It Off",
+    "I Wish You Would",
+    "Bad Blood",
+    "Wildest Dreams",
+    "How You Get the Girl",
+    "This Love",
+    "I Know Places",
+    "Clean",
+    "Wonderland",
+    "You Are in Love",
+    "New Romantics",
+    "Slut!",
+    "Say Don't Go",
+    "Now That We Don't Talk"
+  ],
+"Reputation":[
+  "…Ready for It?",
+  "End Game", 
+  "I Did Something Bad",	
+  "Don't Blame Me",	
+  "Delicate",	
+  "Look What You Made Me Do",	
+  "So It Goes...",	
+  "Gorgeous",	
+  "Getaway Car",	
+  "King of My Heart",	
+  "Dancing with Our Hands Tied",
+  "Dress",	
+  "This Is Why We Can't Have Nice Things"	, 
+  "Call It What You Want"	,
+  "New Year's Day"	,
+  ],
+}
+
+//put the names with comas as elements of the array, delete any other remaininf text that isnt bewteen quotation marks
+
+// Populate album dropdown
+const albumSelect = document.getElementById('album');
+Object.keys(musicDatabase).forEach(album => {
+  const option = document.createElement('option');
+  option.value = album;
+  option.textContent = album;
+  albumSelect.appendChild(option);
+});
+
+// Function to update tracks based on selected album
+function updateTracks() {
+  const albumSelect = document.getElementById('album');
+  const trackSelect = document.getElementById('track');
+  const selectedAlbum = albumSelect.value;
+
+  // Clear current tracks
+  trackSelect.innerHTML = '';
+
+  if (selectedAlbum) {
+      // Enable track select
+      trackSelect.disabled = false;
+      
+      // Add default option
+      const defaultOption = document.createElement('option');
+      defaultOption.value = '';
+      defaultOption.textContent = 'Select Track';
+      trackSelect.appendChild(defaultOption);
+
+      // Add tracks for selected album
+      musicDatabase[selectedAlbum].forEach(track => {
+          const option = document.createElement('option');
+          option.value = track;
+          option.textContent = track;
+          trackSelect.appendChild(option);
+      });
+  } else {
+      // Disable track select if no album selected
+      trackSelect.disabled = true;
+      const option = document.createElement('option');
+      option.value = '';
+      option.textContent = 'First select an album';
+      trackSelect.appendChild(option);
+  }
+}
   
