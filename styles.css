@@ -54,42 +54,68 @@
 
   }
   
-  #next-button:hover {
-    background-color: #1aa34a; /* Darker green on hover */
-    transform: scale(1.05); /* Slightly larger on hover */
-  }
-  
-  #next-button:active {
-    background-color: #62466B; /* Even darker green on click */
-    transform: scale(0.95); /* Slightly smaller on click */
-  }
-  
-  #message-container {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: auto; /* Width of the box */
-    height: auto; /* Height of the box */
-    border: 2px solid #BEA7C4;
-    background-color: #BEA7C4;
-    border-radius: 10px;
-    top: 30%; /* Adjust the top position to align above the next button */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
+  #check-button {
+  background-color: #62466B; /* Spotify Green */
+  color: #fbe5ff; /* White text */
+  border: none;
+  border-radius: 50px; /* Rounded corners */
+  padding: 10px 20px; /* Size */
+  font-size: 16px; /* Text size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Playfair Display', serif;
+  font-size: large;
 
-  #message {
-    font-size: 2.5rem;
-    color: #62466B;
-    white-space: nowrap;
-    font-family: 'Playfair Display', serif;
-    font-weight: bolder;
+}
+
+#check-button:hover {
+  background-color: #1aa34a; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly larger on hover */
+}
+
+#check-button:active {
+  background-color: #62466B; /* Even darker green on click */
+  transform: scale(0.95); /* Slightly smaller on click */
+}
+  
+#next-button:hover {
+  background-color: #1aa34a; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly larger on hover */
+}
+
+#next-button:active {
+  background-color: #62466B; /* Even darker green on click */
+  transform: scale(0.95); /* Slightly smaller on click */
+}
+  
+#message-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto; /* Width of the box */
+  height: auto; /* Height of the box */
+  border: 2px solid #BEA7C4;
+  background-color: #BEA7C4;
+  border-radius: 10px;
+  top: 30%; /* Adjust the top position to align above the next button */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#message {
+  font-size: 2.5rem;
+  color: #62466B;
+  white-space: nowrap;
+  font-family: 'Playfair Display', serif;
+  font-weight: bolder;
 }
 
 .controls {
-  display: flex;
+  display: flex; 
+  flex-direction: column;
   gap: 1rem;
   justify-content: center;
   align-items: center;
@@ -130,4 +156,19 @@ select:disabled {
   background-color: #f5f5f5;
   cursor: not-allowed;
 }
-  
+
+/*Score
+*/
+.scoreContainer {
+  position: fixed; /* Positions the element relative to the viewport */
+  bottom: 70; /* Anchors it to the bottom */
+  left: 50%; /* Centers the element horizontally */
+  transform: translateX(-50%); /* Adjusts for centering */
+  background-color: #BEA7C4; /* Optional styling */
+  padding: 10px;
+  z-index: 10; /* Ensures it is on top of other elements */
+  font-family: 'Playfair Display', serif;
+  color: #62466B;
+  font-weight: bolder;
+  font-size: medium;
+}

@@ -1,5 +1,8 @@
+let currentRandomTrack;
+
 window.onSpotifyIframeApiReady = (IFrameAPI) => {
   const element = document.getElementById('embed-iframe');
+  currentRandomTrack = element; 
 
   // Define the options for the initial track
   const options = {
@@ -7,7 +10,7 @@ window.onSpotifyIframeApiReady = (IFrameAPI) => {
     height: '0',
     uri: 'spotify:track:6dODwocEuGzHAavXqTbwHv',
   };
-
+  
     const torturedPoets = [
       "spotify:track:6dODwocEuGzHAavXqTbwHv", // Fortnight
       "spotify:track:4PdLaGZubp4lghChqp8erB", // The Tortured Poets Department
@@ -203,49 +206,56 @@ window.onSpotifyIframeApiReady = (IFrameAPI) => {
     const getRandomTrackFromAlbum = (albumIndex) => {
       return Math.floor(Math.random() * albums[albumIndex].length);
     };
-  
-    // Controller callback
-    const callback = (EmbedController) => {
-      currentController = EmbedController;
-  
-      // Function to play a random track
-      const playRandomTrack = () => {
-        // Clear any existing timeout
-        if (playbackTimeout) {
-          clearTimeout(playbackTimeout);
-        }
-  
-        // Stop any currently playing track
-        currentController.pause();
-  
-        // Get random album and track
-        const currentAlbumIndex = getRandomAlbumIndex();
-        const currentTrackIndex = getRandomTrackFromAlbum(currentAlbumIndex);
-        const randomTrack = albums[currentAlbumIndex][currentTrackIndex];
-  
-        // Load and play the new track
-        currentController.loadUri(randomTrack);
-        currentController.play();
-  
-        // Set timeout to stop after 5 seconds
-        playbackTimeout = setTimeout(() => {
-          currentController.pause();
-        }, 5000);
-      };
-  
-      // Ensure the Next button exists and add event listener
-      const nextButton = document.getElementById('next-button');
-      if (nextButton) {
-        nextButton.addEventListener('click', playRandomTrack);
-      } else {
-        console.error("Next button element not found.");
-      }
-    };
-  
-    // Create the controller
-    IFrameAPI.createController(element, options, callback);
+
+
+  const playRandomTrack = () => {
+    if (!currentController) return;
+
+    // Clear any existing timeout
+    if (playbackTimeout) {
+      clearTimeout(playbackTimeout);
+    }
+
+    // Stop any currently playing track
+    currentController.pause();
+
+    // Update the global currentRandomTrack with the new random track
+    const newAlbumIndex = getRandomAlbumIndex();
+    const newTrackIndex = getRandomTrackFromAlbum(newAlbumIndex);
+    currentRandomTrack = albums[newAlbumIndex][newTrackIndex];
+
+    // Load and play the new track
+    currentController.loadUri(currentRandomTrack);
+    //embed.loadUri(currentRandomTrack);
+    currentController.play();
+
+
+    // Set timeout to stop after 5 seconds
+    playbackTimeout = setTimeout(() => {
+      currentController.pause();
+    }, 5000);
   };
 
+  // Controller callback
+  const callback = (EmbedController) => {
+    currentController = EmbedController;
+    
+    // Add event listener to the Next button
+    const nextButton = document.getElementById('next-button');
+    if (nextButton) {
+      // Remove any existing listeners first
+      nextButton.replaceWith(nextButton.cloneNode(true));
+      const newNextButton = document.getElementById('next-button');
+      newNextButton.addEventListener('click', playRandomTrack);
+    } else {
+      console.error("Next button element not found.");
+    }
+  };
+
+  // Create the controller
+  IFrameAPI.createController(element, options, callback);
+};
+  
 const message = "Guess the song!! (Taylor Swift Edition)"; // The message to display
 const displayElement = document.getElementById('message');
 
@@ -412,6 +422,26 @@ const musicDatabase = {
   "Call It What You Want"	,
   "New Year's Day"	,
   ],
+  "Lover":[
+    "I Forgot That You Existed",
+    "Cruel Summer",	
+    "Lover",
+    "The Man",	
+    "The Archer",	
+	  "I Think He Knows",
+    "Miss Americana & the Heartbreak Prince",
+    "Paper Rings",
+    "Cornelia Street",
+    "Death by a Thousand Cuts"	,
+	  "London Boy",
+	  "Soon You'll Get Better",
+    "False God",
+	  "You Need to Calm Down",
+	  "Afterglow",
+	  "Me!" ,
+	  "It's Nice to Have a Friend"	,
+	  "Daylight"
+  ]
 }
 
 //put the names with comas as elements of the array, delete any other remaininf text that isnt bewteen quotation marks
@@ -460,4 +490,61 @@ function updateTracks() {
       trackSelect.appendChild(option);
   }
 }
-  
+
+// Function to check if the selected track matches the current random track
+function checkAnswer() {
+  const selectedTrack = document.getElementById('track').value;
+
+  if (!selectedTrack) {
+      displayMessage('Please select a track before checking your answer!', 'error');
+      return;
+  }
+  console.log(currentRandomTrack); 
+  if (selectedTrack === element) {
+      updateScore();
+      displayMessage('Correct! You guessed the track!', 'success');
+  } else {
+      displayMessage('Incorrect. Try again!', 'error');
+  }
+}
+
+// Update score and display
+function updateScore() {
+  const scoreElement = document.getElementById('score');
+  let score = parseInt(scoreElement.innerText, 10) || 0;
+  score++;
+  scoreElement.innerText = score;
+
+  const bestScoreElement = document.getElementById('Bestscore');
+  let bestScore = parseInt(bestScoreElement.innerText, 10) || 0;
+  if (score > bestScore) {
+      bestScoreElement.innerText = score;
+  }
+}
+
+// Display a message to the user
+function displayMessage(message, type) {
+  const messageContainer = document.getElementById('message');
+  messageContainer.innerText = message;
+
+  if (type === 'success') {
+      messageContainer.style.color = '#62466B';
+  } else if (type === 'error') {
+      messageContainer.style.color ='#62466B';
+  }
+}
+
+// Add event listeners
+document.querySelector('.controls').addEventListener('click', (event) => {
+  if (event.target.id === 'next-button') {
+      const buttonText = event.target.innerText;
+
+      if (buttonText === 'Play Random Song') {
+          playRandomTrack();
+      } else if (buttonText === 'Check Answer') {
+          checkAnswer();
+      } else if (buttonText === 'Play Again') {
+          playRandomTrack();
+      }
+  }
+});

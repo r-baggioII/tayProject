@@ -8,6 +8,12 @@
 </head>
 
 <body>
+
+  <div class = "scoreContainer">
+    <h2>Score: <span id="score">0</span></h2>
+    <h2>Best Score: <span id="Bestscore">0</span></h2>
+  </div>
+
   <div id="message-container">
     <div id="message"></div>
   </div>
@@ -15,6 +21,9 @@
   
   <div class="controls">
     <button id="next-button">Play Random Song</button>
+    <button id="next-button">Play Again</button>
+    <button id="next-button">Check Answer</button>
+
   </div>
   <div class = "tableContainer">
     <table>
@@ -42,9 +51,10 @@
   </div>
 
   
-  
 
   <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+  <script src="https://open.spotify.com/embed-podcast/iframe-api/v1"></script>
+
   <script src="scripts.js"></script>
 </body>
 </html>
