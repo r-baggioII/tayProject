@@ -69,15 +69,6 @@
 
 }
 
-#check-button:hover {
-  background-color: #1aa34a; /* Darker green on hover */
-  transform: scale(1.05); /* Slightly larger on hover */
-}
-
-#check-button:active {
-  background-color: #62466B; /* Even darker green on click */
-  transform: scale(0.95); /* Slightly smaller on click */
-}
   
 #next-button:hover {
   background-color: #1aa34a; /* Darker green on hover */
