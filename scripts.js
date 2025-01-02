@@ -1,23 +1,22 @@
 let randomTrack;
-let randomAlbum; 
-
+let randomAlbum;
 const reputation = {
   "…Ready for It?": "spotify:track:2yLa0QULdQr0qAIvVwN6B5", //Ready For It
-  "End Game" : "spotify:track:2x0WlnmfG39ZuDmstl9xfX", //End Game
+  "End Game": "spotify:track:2x0WlnmfG39ZuDmstl9xfX", //End Game
   "I Did Something Bad": "spotify:track:4svZDCRz4cJoneBpjpx8DJ", //I Did Something Bad
   "Don't Blame Me": "spotify:track:1R0a2iXumgCiFb7HEZ7gUE", //Don't Blame Me
-  "Delicate": "spotify:track:6NFyWDv5CjfwuzoCkw47Xf",//Delicate
-  "Look What You Made Me Do":"spotify:track:1P17dC1amhFzptugyAO7Il", //Look What You Made Me Do
-  "So It Goes..." : "spotify:track:5PxFv9yJEg9dxvbZggykro",//So It Goes
-  "Gorgeous" :"spotify:track:1ZY1PqizIl78geGM4xWlEA",//Gorgeous
-  "Getaway Car" :"spotify:track:0VE4kBnHJUgtMf0dy6DRmW",//Getaway Car
-  "King of My Heart" :"spotify:track:7HuBDWi18s4aJM8UFnNheH",//King of My Heart
-  "Dancing with Our Hands Tied" :"spotify:track:7I7JbDv63ZJJsSi24DyJrz",//Dancing With Our Hands Tied
-  "Dress":"spotify:track:6oVxXO5oQ4pTpO8RSnkzvv",//Dress
-  "This Is Why We Can't Have Nice Things"	:"spotify:track:07NxDD1iKCHbAldceD7QLP",//This Is Why We Can't Have Nice Things
-  "Call It What You Want":"spotify:track:1GwMQaZz6Au3QLDbjbMdme",//Call It What You Want
-  "New Year's Day":"spotify:track:7F5oktn5YOsR9eR5YsFtqb",//New Year's Day
-};  
+  "Delicate": "spotify:track:6NFyWDv5CjfwuzoCkw47Xf", //Delicate
+  "Look What You Made Me Do": "spotify:track:1P17dC1amhFzptugyAO7Il", //Look What You Made Me Do
+  "So It Goes...": "spotify:track:5PxFv9yJEg9dxvbZggykro", //So It Goes
+  "Gorgeous": "spotify:track:1ZY1PqizIl78geGM4xWlEA", //Gorgeous
+  "Getaway Car": "spotify:track:0VE4kBnHJUgtMf0dy6DRmW", //Getaway Car
+  "King of My Heart": "spotify:track:7HuBDWi18s4aJM8UFnNheH", //King of My Heart
+  "Dancing with Our Hands Tied": "spotify:track:7I7JbDv63ZJJsSi24DyJrz", //Dancing With Our Hands Tied
+  "Dress": "spotify:track:6oVxXO5oQ4pTpO8RSnkzvv", //Dress
+  "This Is Why We Can't Have Nice Things": "spotify:track:07NxDD1iKCHbAldceD7QLP", //This Is Why We Can't Have Nice Things
+  "Call It What You Want": "spotify:track:1GwMQaZz6Au3QLDbjbMdme", //Call It What You Want
+  "New Year's Day": "spotify:track:7F5oktn5YOsR9eR5YsFtqb", //New Year's Day
+};
 const red = {
   "State of Grace": "spotify:track:6lzc0Al0zfZOIFsFvBS1ki",
   "Red": "spotify:track:4OAuvHryIVv4kMDNSLuPt6",
@@ -53,7 +52,7 @@ const red = {
 const speakNow = {
   "Mine": "spotify:track:7G0gBu6nLdhFDPRLc0HdDG",
   "Sparks Fly": "spotify:track:3MytWN8L7shNYzGl4tAKRp",
-  "Back to December": "spotify:track:79uDOz0zuuWS7HWxzMmTa2", 
+  "Back to December": "spotify:track:79uDOz0zuuWS7HWxzMmTa2",
   "Speak Now": "spotify:track:5xXqyjLicvEpch72qEryFT",
   "Dear John": "spotify:track:1zU8j1x3yi9xalMF96pzKp",
   "Mean": "spotify:track:30Y4CV7A6YqtQtTTo7Ue4j",
@@ -94,137 +93,128 @@ const T1989 = {
   "Slut!": "spotify:track:6T0sEnqjmHISIKwFETeeiP",
   "Say Don't Go": "spotify:track:1Iq8oo9XkmmvCQiGOfORiz",
   "Now That We Don't Talk": "spotify:track:5KD6AEm19QnMbfWpfoOHMl",
-  "Suburban Legends" : "spotify:track:6T0sEnqjmHISIKwFETeeiP",
-  "Is It Over Now?" : "spotify:track:6IG3sQ8s9nfk6TUlVzRhbN", 
-  "Bad Blood(feat.Kendrick Lamar)" : "spotify:track:6qAcApH8obo8eqatCKUHd9"
+  "Suburban Legends": "spotify:track:6T0sEnqjmHISIKwFETeeiP",
+  "Is It Over Now?": "spotify:track:6IG3sQ8s9nfk6TUlVzRhbN",
+  "Bad Blood(feat.Kendrick Lamar)": "spotify:track:6qAcApH8obo8eqatCKUHd9"
 };
 const lover = {
-  "I Forgot That You Existed": 	"spotify:track:43rA71bccXFGD4C8GOpIlN",
-    "Cruel Summer" : "spotify:track:1BxfuPKGuaTgP7aM0Bbdwr", 
-    "Lover" : "spotify:track:1dGr1c8CrMLDpV6mPbImSI" ,
-    "The Man":"spotify:track:3RauEVgRgj1IuWdJ9fDs70"  ,	
-    "The Archer" :"spotify:track:3pHkh7d0lzM2AldUtz2x37" , 	
-	  "I Think He Knows" :"spotify:track:2YWtcWi3a83pdEg3Gif4Pd" ,
-    "Miss Americana & the Heartbreak Prince" :"spotify:track:214nt20w5wOxJnY462klLw" ,
-    "Paper Rings" : "spotify:track:4y5bvROuBDPr5fuwXbIBZR" ,
-    "Cornelia Street" : "spotify:track:12M5uqx0ZuwkpLp5rJim1a" ,
-    "Death by a Thousand Cuts"	: "spotify:track:2dgFqt3w9xIQRjhPtwNk3D" ,
-	  "London Boy" :"spotify:track:1LLXZFeAHK9R4xUramtUKw"  ,
-	  "Soon You'll Get Better" : "spotify:track:4AYtqFyFbX0Xkc2wtcygTr" ,
-    "False God" : "spotify:track:5hQSXkFgbxjZo9uCwd11so" ,
-	  "You Need to Calm Down" : "spotify:track:6RRNNciQGZEXnqk8SQ9yv5?" ,
-	  "Afterglow" :"spotify:track:1SymEzIT3H8UZfibCs3TYi" ,
-	  "Me!" : "spotify:track:2Rk4JlNc2TPmZe2af99d45" ,
-	  "It's Nice to Have a Friend"	: "spotify:track:1SmiQ65iSAbPto6gPFlBYm" ,
-	  "Daylight" : "spotify:track:1fzAuUVbzlhZ1lJAx9PtY6"  
-}; 
-
+  "I Forgot That You Existed": "spotify:track:43rA71bccXFGD4C8GOpIlN",
+  "Cruel Summer": "spotify:track:1BxfuPKGuaTgP7aM0Bbdwr",
+  "Lover": "spotify:track:1dGr1c8CrMLDpV6mPbImSI",
+  "The Man": "spotify:track:3RauEVgRgj1IuWdJ9fDs70",
+  "The Archer": "spotify:track:3pHkh7d0lzM2AldUtz2x37",
+  "I Think He Knows": "spotify:track:2YWtcWi3a83pdEg3Gif4Pd",
+  "Miss Americana & the Heartbreak Prince": "spotify:track:214nt20w5wOxJnY462klLw",
+  "Paper Rings": "spotify:track:4y5bvROuBDPr5fuwXbIBZR",
+  "Cornelia Street": "spotify:track:12M5uqx0ZuwkpLp5rJim1a",
+  "Death by a Thousand Cuts": "spotify:track:2dgFqt3w9xIQRjhPtwNk3D",
+  "London Boy": "spotify:track:1LLXZFeAHK9R4xUramtUKw",
+  "Soon You'll Get Better": "spotify:track:4AYtqFyFbX0Xkc2wtcygTr",
+  "False God": "spotify:track:5hQSXkFgbxjZo9uCwd11so",
+  "You Need to Calm Down": "spotify:track:6RRNNciQGZEXnqk8SQ9yv5?",
+  "Afterglow": "spotify:track:1SymEzIT3H8UZfibCs3TYi",
+  "Me!": "spotify:track:2Rk4JlNc2TPmZe2af99d45",
+  "It's Nice to Have a Friend": "spotify:track:1SmiQ65iSAbPto6gPFlBYm",
+  "Daylight": "spotify:track:1fzAuUVbzlhZ1lJAx9PtY6"
+};
 const torturedPoets = {
-  "Fortnight" : "spotify:track:6dODwocEuGzHAavXqTbwHv", 
+  "Fortnight": "spotify:track:6dODwocEuGzHAavXqTbwHv",
   "The Tortured Poets Department ": "spotify:track:4PdLaGZubp4lghChqp8erB",
-  " My Boy Only Breaks His Favorite Toys":  "spotify:track:7uGYWMwRy24dm7RUDDhUlD", //
- "Down Bad": "spotify:track:1kbEbBdEgQdQeLXCJh28pJ", // 
+  " My Boy Only Breaks His Favorite Toys": "spotify:track:7uGYWMwRy24dm7RUDDhUlD", //
+  "Down Bad": "spotify:track:1kbEbBdEgQdQeLXCJh28pJ", // 
   "So Long London": "spotify:track:7wAkQFShJ27V8362MqevQr", // 
-  "But Daddy I Love Him" : "spotify:track:4QMgEffJQuKtjCNvqfRZ0m", // 
- "Fresh Out The Slammer": "spotify:track:7IWcDWOfiooH5hRs9XOVYz", // 
-  "Florida!!!" : "spotify:track:5ExOm0dh4NyRyAdSAO9hyM", // 
- "Guilty as Sin?": "spotify:track:799KrpEbhZp0MHeiA8YK9P", // 
+  "But Daddy I Love Him": "spotify:track:4QMgEffJQuKtjCNvqfRZ0m", // 
+  "Fresh Out The Slammer": "spotify:track:7IWcDWOfiooH5hRs9XOVYz", // 
+  "Florida!!!": "spotify:track:5ExOm0dh4NyRyAdSAO9hyM", // 
+  "Guilty as Sin?": "spotify:track:799KrpEbhZp0MHeiA8YK9P", // 
   "Who's Afraid of Little Old Me": "spotify:track:2d8UxVNhJinc8uat9PoM9y", // 
-  "I Can Fix Him (No Really I Can)":  "spotify:track:5chnRTB9qMK3W1M41SnU9s", // 
-  "loml" : "spotify:track:3YkNIrAvbKNrrwwEd7NVLl", // 
-  " I Can Do It With a Broken Heart" :"spotify:track:2fPvQfGQEZOKtJ9qXeL4x8", //
-  " The Smallest Man Who Ever Lived" :"spotify:track:1xtw1krCR6Dw2KwkXw5z63", //
+  "I Can Fix Him (No Really I Can)": "spotify:track:5chnRTB9qMK3W1M41SnU9s", // 
+  "loml": "spotify:track:3YkNIrAvbKNrrwwEd7NVLl", // 
+  " I Can Do It With a Broken Heart": "spotify:track:2fPvQfGQEZOKtJ9qXeL4x8", //
+  " The Smallest Man Who Ever Lived": "spotify:track:1xtw1krCR6Dw2KwkXw5z63", //
   "The Alchemy": "spotify:track:1tuNqJOtRQVHvONR8Lg3MZ", // 
-  "Clara Bow" : "spotify:track:4d9PtIEVij9jW5OaLinH66", // 
-  "The Black Dog" : "spotify:track:62E2nR0od0M5HYxuYLaDz7", // 
-  "Imgonnageyoback" : "spotify:track:1kcwpPDQnqEqmezzXdJTCP", // 
-  "The Albatross" : "spotify:track:4EF6IyONolQy0bIQXm2EmX", // 
-  "Chloe or Sam or Sophia or Marcus" : "spotify:track:1rmEsOezwf2lmIZTMAO5Ag", // 
-  "How Did It End?" : "spotify:track:5Bedn0svl0ZD7RGmJkmKKw", // 
-  "So High School" : "spotify:track:7Mts0OfPorF4iwOomvfqn1", // 
-  "I Hate It Here" : "spotify:track:3hlGuz3loYoLfI3bpwieWq", // 
-  "Thank You Aimee" : "spotify:track:7ogK4lJDVDMU6A6vYR5rvD", // 
+  "Clara Bow": "spotify:track:4d9PtIEVij9jW5OaLinH66", // 
+  "The Black Dog": "spotify:track:62E2nR0od0M5HYxuYLaDz7", // 
+  "Imgonnageyoback": "spotify:track:1kcwpPDQnqEqmezzXdJTCP", // 
+  "The Albatross": "spotify:track:4EF6IyONolQy0bIQXm2EmX", // 
+  "Chloe or Sam or Sophia or Marcus": "spotify:track:1rmEsOezwf2lmIZTMAO5Ag", // 
+  "How Did It End?": "spotify:track:5Bedn0svl0ZD7RGmJkmKKw", // 
+  "So High School": "spotify:track:7Mts0OfPorF4iwOomvfqn1", // 
+  "I Hate It Here": "spotify:track:3hlGuz3loYoLfI3bpwieWq", // 
+  "Thank You Aimee": "spotify:track:7ogK4lJDVDMU6A6vYR5rvD", // 
   "I Look in People's Windows": "spotify:track:1Zai5UJ2di3qEuR2HeT2s8", // 
-  "The Prophecy" : "spotify:track:18WFFUIsewmA8g31KAeo3e", // 
+  "The Prophecy": "spotify:track:18WFFUIsewmA8g31KAeo3e", // 
   "Cassandra": "spotify:track:0g4fMVo4JjwnIpTfFfLdxS", // 
-  "Peter" : "spotify:track:3zMDGj4D8ogaYgAIZPeU7S", // 
+  "Peter": "spotify:track:3zMDGj4D8ogaYgAIZPeU7S", // 
   "The Bolter ": "spotify:track:2913xXOVAIDAqxzV2g4VcU", // 
   "Robin": "spotify:track:2CnjDMdpRjlWv04Xk3s6MW", // 
-  "The Manuscript" : "spotify:track:1DTRUYVd8rYpla9hhVVwjo", // 
-} 
-
+  "The Manuscript": "spotify:track:1DTRUYVd8rYpla9hhVVwjo", // 
+};
 const evermore = {
   "willow": "spotify:track:2gVhfX2Gy1T9kDuS9azrF7", //willow
-  "champagne problems" :"spotify:track:1gcyHQpBQ1lfXGdhZmWrHP", //champagne problems
-  "gold rush" : "spotify:track:3Dby3p1m6IOZn2gIIqECgK", //gold rush
+  "champagne problems": "spotify:track:1gcyHQpBQ1lfXGdhZmWrHP", //champagne problems
+  "gold rush": "spotify:track:3Dby3p1m6IOZn2gIIqECgK", //gold rush
   "'tis the damn season": "spotify:track:6sQckd3Z8NPxVVKUnavY1F", //‘tis the damn season
   "tolerate it": "spotify:track:6lCvK2AR2uOKkVFCVlAzzm", //tolerate it
   "no body, no crime (featuring HAIM)": "spotify:track:6uwfVkaOM1mcMkFmSn35ix", //no body, no crime
-  "happiness":"spotify:track:55Vf4bimc1Rtfg0PAQRAo2", //happiness
-  "dorothea":"spotify:track:/66tOfHVH3aUrscg8vExRV4",//dorothea
-  "coney island (featuring The National)":"spotify:track:2awNGIJHodfLZSClB3PYhz", //coney island
-  "ivy":"spotify:track:43Ykum9T72UOPhBN31grpN", //ivy
-  "cowboy like me":"spotify:track:/52OkpDsU6MmPx1AwGOb6Ap", //cowboy like me
-  "long story short":"spotify:track:5VYWxXUpxuxEmCqMLDqICo", //long story short
-  "marjorie":"spotify:track:5uICWmZTLkpEVbK22PBP6e", //marjorie
-  "closure" :"spotify:track:6a8aUhYbaQBUI8PcJ5ZmQ", //closure
-  "evermore (featuring Bon Iver)" :"spotify:track:6Wlq9rqkxrqj5Kls4Kw14H", //evermore 
-  "right where you left me (bonus track)":"spotify:track:3zwMVvkBe2qIKDObWgXw4N", //right where you left me
-  "it's time to go (bonus track)" :"spotify:track:1kdWw77ZpYOkhxeuhzU1j6" //it’s time to go 
-}; 
-
-  
+  "happiness": "spotify:track:55Vf4bimc1Rtfg0PAQRAo2", //happiness
+  "dorothea": "spotify:track:/66tOfHVH3aUrscg8vExRV4", //dorothea
+  "coney island (featuring The National)": "spotify:track:2awNGIJHodfLZSClB3PYhz", //coney island
+  "ivy": "spotify:track:43Ykum9T72UOPhBN31grpN", //ivy
+  "cowboy like me": "spotify:track:/52OkpDsU6MmPx1AwGOb6Ap", //cowboy like me
+  "long story short": "spotify:track:5VYWxXUpxuxEmCqMLDqICo", //long story short
+  "marjorie": "spotify:track:5uICWmZTLkpEVbK22PBP6e", //marjorie
+  "closure": "spotify:track:6a8aUhYbaQBUI8PcJ5ZmQ", //closure
+  "evermore (featuring Bon Iver)": "spotify:track:6Wlq9rqkxrqj5Kls4Kw14H", //evermore 
+  "right where you left me (bonus track)": "spotify:track:3zwMVvkBe2qIKDObWgXw4N", //right where you left me
+  "it's time to go (bonus track)": "spotify:track:1kdWw77ZpYOkhxeuhzU1j6" //it’s time to go 
+};
 const folklore = {
-  "The 1" : "spotify:track:4pfrrhvplbJZAIsfosGWQP", //the 1
-  "cardigan" : "spotify:track:0KRYCBwIpWYFNrXOmXbyUh", //cardigan
+  "The 1": "spotify:track:4pfrrhvplbJZAIsfosGWQP", //the 1
+  "cardigan": "spotify:track:0KRYCBwIpWYFNrXOmXbyUh", //cardigan
   "the last great american dynasty": "spotify:track:2olxzvoFI9IpxqFeUv7WOX", //the last great american dynasty
   "exile": "spotify:track:5S4aYQAJOwJMAamANWlICO", //exile
   "my tears ricochet": "spotify:track:5P2bHCDM2tsgIaYWsZMhu5", //my tears ricochet
-  "mirrorball" : "spotify:track:2I8YAEA1VmCuP1wkJHMpTw", //mirrorball
-  "seven" :"spotify:track:76mOLcXOjOEhyY4mMF1l3r", //seven
-  "august" :"spotify:track:6nK2pIKFcRc5frrZKHgsi", //august
-  "this is me trying" :"spotify:track:7cm50Lw03k6VvRauJtkyTj", //this is me trying
-  "illicit affairs" :"spotify:track:6DrLROM5MG9bxWHeEG5elq", //illicit affairs
-  "invisible string" :"spotify:track:2ehRU518I0hYqMGQnk4lDY", //invisible string
-  "mad woman" : "spotify:track:0RP1kqoSPkVXsKiQNhMKzV", //mad woman
+  "mirrorball": "spotify:track:2I8YAEA1VmCuP1wkJHMpTw", //mirrorball
+  "seven": "spotify:track:76mOLcXOjOEhyY4mMF1l3r", //seven
+  "august": "spotify:track:6nK2pIKFcRc5frrZKHgsi", //august
+  "this is me trying": "spotify:track:7cm50Lw03k6VvRauJtkyTj", //this is me trying
+  "illicit affairs": "spotify:track:6DrLROM5MG9bxWHeEG5elq", //illicit affairs
+  "invisible string": "spotify:track:2ehRU518I0hYqMGQnk4lDY", //invisible string
+  "mad woman": "spotify:track:0RP1kqoSPkVXsKiQNhMKzV", //mad woman
   "epiphany": "spotify:track:1EXa37LpSvi3OQ9UYQ28rD", //epiphany
-  "betty" :"spotify:track:3IhtE4fkytdrtEfV34UzkD", //betty
-  "peace" :"spotify:track:6JlI8Ay77m4nJvZTHvfT1J", //peace
+  "betty": "spotify:track:3IhtE4fkytdrtEfV34UzkD", //betty
+  "peace": "spotify:track:6JlI8Ay77m4nJvZTHvfT1J", //peace
   "hoax": "spotify:track:0YeDG5HnKnG7jpArkzsSPa", //hoax
-  "the lakes" :"spotify:track:0eFQWVz0qIxDOvhLpZ40P7" //the lakes
-}; 
-
+  "the lakes": "spotify:track:0eFQWVz0qIxDOvhLpZ40P7" //the lakes
+};
 const midnights = {
-  "Lavender Haze" : "spotify:track:24emu3sabKISjRkrys28jq",
-  "Maroon" : "spotify:track:6qxvy9Pe4RJIq5JBVbbwbS",
-  "Anti-Hero" : "spotify:track:5qIHFdkW6phMsTZlN2g8Lc",
-  "Snow On The Beach" : "spotify:track:7GA86Uo2jYbj8vIXe2nyWd",
-  "You're On Your Own, Kid" :"spotify:track:6PQOU00xWNrGwCZzboriXy",
-  "Midnight Rain" : "spotify:track:4eKMqf9ZMSclDX7V9Ptg7x",
-  "Question" : "spotify:track:7oomkQSYf1ia2VnVEWfFIU",
-  "Vigilante Shit" : "spotify:track:0GKDhq6ZbmSbRHd3eyGlB7",
-  "Bejeweled" : "spotify:track:0VpF6RLdCfPIeYRwMu4tZK",
-  "Labyrinth" : "spotify:track:4bBDkw2KBMX0tcgAaXC83Q",
-  "Karma" : "spotify:track:45R112Jz5hQeKgITXgSXzs",
-  "Sweet Nothing" : "spotify:track:2L09RYwH5Pjzca6PmbUAw3",
-  "Mastermind" : "spotify:track:1QQii3pa5m8MEda0nbkjfw",
-  "The Great War" : "spotify:track:2VuqMjgoKaOHNM8HpxtXKx",
-  "Bigger Than The Whole Sky" : "spotify:track:71CBDRKmF2VeRKYMG1DFBh",
-  "Paris" : "spotify:track:5tWxKWq1DSP1s9WQ5PWuqu",
-  "High Infidelity" : "spotify:track:1SztNGCwEHJEVFx90E5g7D",
-  "Glitch" : "spotify:track:7C0w28EsX0Um2FrZs9gso2",
-  "Would've, Could've, Should've" : "spotify:track:4txojlesMFQZGWxwz2EeqB", 
-  "Dear Reader" : "spotify:track:10GRRCR5fctuOF4GFmATJI",
-  "Hits Different" : "spotify:track:3xYJScVfxByb61dYHTwiby",
-  "Snow On The Beach(feat.More Lana Del Rey)" : "spotify:track:4zmKGsrXjLmljb5fTaBTot",
-  "Karma(feat.Ice Spice)" :"spotify:track:4i6cwNY6oIUU2XZxPIw82Y"
-}
-
-
-const albums = [reputation,red,speakNow,T1989,lover,torturedPoets,evermore,folklore,midnights];
+  "Lavender Haze": "spotify:track:24emu3sabKISjRkrys28jq",
+  "Maroon": "spotify:track:6qxvy9Pe4RJIq5JBVbbwbS",
+  "Anti-Hero": "spotify:track:5qIHFdkW6phMsTZlN2g8Lc",
+  "Snow On The Beach": "spotify:track:7GA86Uo2jYbj8vIXe2nyWd",
+  "You're On Your Own, Kid": "spotify:track:6PQOU00xWNrGwCZzboriXy",
+  "Midnight Rain": "spotify:track:4eKMqf9ZMSclDX7V9Ptg7x",
+  "Question": "spotify:track:7oomkQSYf1ia2VnVEWfFIU",
+  "Vigilante Shit": "spotify:track:0GKDhq6ZbmSbRHd3eyGlB7",
+  "Bejeweled": "spotify:track:0VpF6RLdCfPIeYRwMu4tZK",
+  "Labyrinth": "spotify:track:4bBDkw2KBMX0tcgAaXC83Q",
+  "Karma": "spotify:track:45R112Jz5hQeKgITXgSXzs",
+  "Sweet Nothing": "spotify:track:2L09RYwH5Pjzca6PmbUAw3",
+  "Mastermind": "spotify:track:1QQii3pa5m8MEda0nbkjfw",
+  "The Great War": "spotify:track:2VuqMjgoKaOHNM8HpxtXKx",
+  "Bigger Than The Whole Sky": "spotify:track:71CBDRKmF2VeRKYMG1DFBh",
+  "Paris": "spotify:track:5tWxKWq1DSP1s9WQ5PWuqu",
+  "High Infidelity": "spotify:track:1SztNGCwEHJEVFx90E5g7D",
+  "Glitch": "spotify:track:7C0w28EsX0Um2FrZs9gso2",
+  "Would've, Could've, Should've": "spotify:track:4txojlesMFQZGWxwz2EeqB",
+  "Dear Reader": "spotify:track:10GRRCR5fctuOF4GFmATJI",
+  "Hits Different": "spotify:track:3xYJScVfxByb61dYHTwiby",
+  "Snow On The Beach(feat.More Lana Del Rey)": "spotify:track:4zmKGsrXjLmljb5fTaBTot",
+  "Karma(feat.Ice Spice)": "spotify:track:4i6cwNY6oIUU2XZxPIw82Y"
+};
+const albums = [reputation, red, speakNow, T1989, lover, torturedPoets, evermore, folklore, midnights];
 //const albums = [torturedPoets, evermore, folklore, red, reputation, speakNow, T1989];
-
-
 // Sample music database
 const musicDatabase = {
   "Taylor Swift": [
@@ -348,32 +338,32 @@ const musicDatabase = {
     "Say Don't Go",
     "Now That We Don't Talk",
     "Suburban Legends",
-    "Is It Over Now?", 
+    "Is It Over Now?",
     "Bad Blood(feat.Kendrick Lamar)"
   ],
   "reputation": [
     "…Ready for It?",
-    "End Game", 
-    "I Did Something Bad",	
-    "Don't Blame Me",	
-    "Delicate",	
-    "Look What You Made Me Do",	
-    "So It Goes...",	
-    "Gorgeous",	
-    "Getaway Car",	
-    "King of My Heart",	
+    "End Game",
+    "I Did Something Bad",
+    "Don't Blame Me",
+    "Delicate",
+    "Look What You Made Me Do",
+    "So It Goes...",
+    "Gorgeous",
+    "Getaway Car",
+    "King of My Heart",
     "Dancing with Our Hands Tied",
-    "Dress",	
-    "This Is Why We Can't Have Nice Things", 
+    "Dress",
+    "This Is Why We Can't Have Nice Things",
     "Call It What You Want",
     "New Year's Day"
   ],
   "Lover": [
     "I Forgot That You Existed",
-    "Cruel Summer",	
+    "Cruel Summer",
     "Lover",
-    "The Man",	
-    "The Archer",	
+    "The Man",
+    "The Archer",
     "I Think He Knows",
     "Miss Americana & the Heartbreak Prince",
     "Paper Rings",
@@ -389,7 +379,7 @@ const musicDatabase = {
     "Daylight"
   ],
   "folklore": [
-    "The 1", 
+    "The 1",
     "cardigan",
     "the last great american dynasty",
     "exile",
@@ -400,7 +390,7 @@ const musicDatabase = {
     "this is me trying",
     "illicit affairs",
     "invisible string",
-    "mad woman", 
+    "mad woman",
     "epiphany",
     "betty",
     "peace",
@@ -427,65 +417,63 @@ const musicDatabase = {
     "it's time to go (bonus track)"
   ],
   "Midnights": [
-    "Lavender Haze", 
+    "Lavender Haze",
     "Maroon",
-    "Anti-Hero", 
-    "Snow On The Beach" ,
-    "You're On Your Own, Kid" ,
-    "Midnight Rain" ,
-    "Question" ,
-    "Vigilante Shit" ,
-    "Bejeweled" , 
-    "Labyrinth" ,
-    "Karma" ,
-    "Sweet Nothing" ,
-    "Mastermind" ,
-    "The Great War" ,
-    "Bigger Than The Whole Sky" ,
-    "Paris" ,
-    "High Infidelity" ,
-    "Glitch" ,
-    "Would've, Could've, Should've" ,
-    "Dear Reader" ,
-    "Hits Different" ,
-    "Snow On The Beach(feat.More Lana Del Rey)" ,
-    "Karma(feat.Ice Spice)" 
-],
+    "Anti-Hero",
+    "Snow On The Beach",
+    "You're On Your Own, Kid",
+    "Midnight Rain",
+    "Question",
+    "Vigilante Shit",
+    "Bejeweled",
+    "Labyrinth",
+    "Karma",
+    "Sweet Nothing",
+    "Mastermind",
+    "The Great War",
+    "Bigger Than The Whole Sky",
+    "Paris",
+    "High Infidelity",
+    "Glitch",
+    "Would've, Could've, Should've",
+    "Dear Reader",
+    "Hits Different",
+    "Snow On The Beach(feat.More Lana Del Rey)",
+    "Karma(feat.Ice Spice)"
+  ],
   "The Tortured Poets Department": [
-      "Fortnight",
-      "The Tortured Poets Department",
-      "My Boy Only Breaks His Favorite Toys",
-      "Down Bad",
-      "So Long London",
-      "But Daddy I Love Him",
-      "Fresh Out The Slammer",
-      "Florida!!!",
-      "Guilty as Sin?",
-      "Who's Afraid of Little Old Me",
-      "I Can Fix Him (No Really I Can)",
-      "loml",
-      "I Can Do It with a Broken Heart",
-      "The Smallest Man Who Ever Lived",
-      "The Alchemy",
-      "Clara Bow",
-      "The Black Dog",
-      "Imgonnagetyouback",
-      "The Albatross",
-      "Chloe or Sam or Sophia or Marcus",
-      "How Did It End?",
-      "So High School",
-      "Thank You Aimee",
-      "I Look in People's Windows",
-      "The Prophecy",
-      "Cassandra",
-      "Peter",
-      "The Bolter",
-      "Robin",
-      "The Manuscript",
-    ],
-  
-}
-
+    "Fortnight",
+    "The Tortured Poets Department",
+    "My Boy Only Breaks His Favorite Toys",
+    "Down Bad",
+    "So Long London",
+    "But Daddy I Love Him",
+    "Fresh Out The Slammer",
+    "Florida!!!",
+    "Guilty as Sin?",
+    "Who's Afraid of Little Old Me",
+    "I Can Fix Him (No Really I Can)",
+    "loml",
+    "I Can Do It with a Broken Heart",
+    "The Smallest Man Who Ever Lived",
+    "The Alchemy",
+    "Clara Bow",
+    "The Black Dog",
+    "Imgonnagetyouback",
+    "The Albatross",
+    "Chloe or Sam or Sophia or Marcus",
+    "How Did It End?",
+    "So High School",
+    "Thank You Aimee",
+    "I Look in People's Windows",
+    "The Prophecy",
+    "Cassandra",
+    "Peter",
+    "The Bolter",
+    "Robin",
+    "The Manuscript",
+  ],
+};
 window.onSpotifyIframeApiReady = (IFrameAPI) => {
   const element = document.getElementById('embed-iframe');
 
@@ -497,7 +485,7 @@ window.onSpotifyIframeApiReady = (IFrameAPI) => {
   };
   let playbackTimeout;
   let currentController;
-  
+
   // Function to pick a random value from an array
   const getRandomIndex = (array) => {
     return Math.floor(Math.random() * array.length);
@@ -518,6 +506,7 @@ window.onSpotifyIframeApiReady = (IFrameAPI) => {
     const randomAlbumArray = Object.values(randomAlbum); //turns the object into an array
     randomTrack = randomAlbumArray[getRandomIndex(randomAlbumArray)]; //gets a random track from the album
 
+
     // Load and play the new track
     currentController.loadUri(randomTrack);
     currentController.play();
@@ -532,7 +521,7 @@ window.onSpotifyIframeApiReady = (IFrameAPI) => {
   // Controller callback
   const callback = (EmbedController) => {
     currentController = EmbedController;
-    
+
     // Add event listener to the Next button
     const nextButton = document.getElementById('next-button');
     if (nextButton) {
@@ -548,30 +537,27 @@ window.onSpotifyIframeApiReady = (IFrameAPI) => {
   // Create the controller
   IFrameAPI.createController(element, options, callback);
 };
-  
 const message = "Guess the song!! (Taylor Swift Edition)"; // The message to display
-const displayElement = document.getElementById('message');
 
+const displayElement = document.getElementById('message');
 let index = 0;
 const interval = 200; // Time in milliseconds between letters
 
 function displayNextLetter() {
-    if (index < message.length) {
-        displayElement.textContent += message[index];
-        index++;
-        setTimeout(displayNextLetter, interval);
-    } else {
-        // Clear the text and restart the animation
-        setTimeout(() => {
-            displayElement.textContent = '';
-            index = 0;
-            displayNextLetter();
-        }, 1000); // Pause for 1 second before restarting
-    }
+  if (index < message.length) {
+    displayElement.textContent += message[index];
+    index++;
+    setTimeout(displayNextLetter, interval);
+  } else {
+    // Clear the text and restart the animation
+    setTimeout(() => {
+      displayElement.textContent = '';
+      index = 0;
+      displayNextLetter();
+    }, 1000); // Pause for 1 second before restarting
+  }
 }
-
 displayNextLetter();
-
 // Populate album dropdown
 const albumSelect = document.getElementById('album');
 Object.keys(musicDatabase).forEach(album => {
@@ -580,7 +566,6 @@ Object.keys(musicDatabase).forEach(album => {
   option.textContent = album;
   albumSelect.appendChild(option);
 });
-
 // Function to update tracks based on selected album
 function updateTracks() {
   const albumSelect = document.getElementById('album');
@@ -591,35 +576,34 @@ function updateTracks() {
   trackSelect.innerHTML = '';
 
   if (selectedAlbum) {
-      // Enable track select
-      trackSelect.disabled = false;
-      
-      // Add default option
-      const defaultOption = document.createElement('option');
-      defaultOption.value = '';
-      defaultOption.textContent = 'Select Track';
-      trackSelect.appendChild(defaultOption);
+    // Enable track select
+    trackSelect.disabled = false;
 
-      // Add tracks for selected album
-      musicDatabase[selectedAlbum].forEach(track => {
-          const option = document.createElement('option');
-          option.value = track;
-          option.textContent = track;
-          trackSelect.appendChild(option);
-      });
-  } else {
-      // Disable track select if no album selected
-      trackSelect.disabled = true;
+    // Add default option
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.textContent = 'Select Track';
+    trackSelect.appendChild(defaultOption);
+
+    // Add tracks for selected album
+    musicDatabase[selectedAlbum].forEach(track => {
       const option = document.createElement('option');
-      option.value = '';
-      option.textContent = 'First select an album';
+      option.value = track;
+      option.textContent = track;
       trackSelect.appendChild(option);
+    });
+  } else {
+    // Disable track select if no album selected
+    trackSelect.disabled = true;
+    const option = document.createElement('option');
+    option.value = '';
+    option.textContent = 'First select an album';
+    trackSelect.appendChild(option);
   }
 }
-
 function checkAnswer() {
   const selectedTrack = document.getElementById('track').value;
-  
+
   // Create a map of URIs to track names from the reputation object
   const trackMap = Object.entries(randomAlbum).reduce((map, [name, uri]) => {
     map[uri] = name;
@@ -630,55 +614,52 @@ function checkAnswer() {
   const currentTrackName = trackMap[randomTrack];
 
   if (!selectedTrack) {
-      displayMessage('Please select a track before checking your answer!', 'error');
-      return;
+    displayMessage('Please select a track before checking your answer!', 'error');
+    return;
   }
-  
+
   if (selectedTrack === currentTrackName) {
-      updateScore();
-      displayMessage('Correct! You guessed the track!', 'success');
+    updateScore();
+    displayMessage('Correct! You guessed the track!', 'success');
   } else {
-      displayMessage('Incorrect. Try again!', 'error');
+    displayMessage('Incorrect. Try again!', 'error');
   }
 }
-
 // Update score and display
 function updateScore() {
   const scoreElement = document.getElementById('score');
   let score = parseInt(scoreElement.innerText, 10) || 0;
-  score += 13; 
+  score += 13;
   scoreElement.innerText = score;
 
   const bestScoreElement = document.getElementById('Bestscore');
   let bestScore = parseInt(bestScoreElement.innerText, 10) || 0;
   if (score > bestScore) {
-      bestScoreElement.innerText = score;
+    bestScoreElement.innerText = score;
   }
 }
-
 // Display a message to the user
 function displayMessage(message, type) {
   const messageContainer = document.getElementById('message');
   messageContainer.innerText = message;
 
   if (type === 'success') {
-      messageContainer.style.color = '#62466B';
+    messageContainer.style.color = '#62466B';
   } else if (type === 'error') {
-      messageContainer.style.color ='#62466B';
+    messageContainer.style.color = '#62466B';
   }
 }
-
 // Add event listeners
 document.querySelector('.controls').addEventListener('click', (event) => {
   if (event.target.id === 'next-button') {
-      const buttonText = event.target.innerText;
+    const buttonText = event.target.innerText;
 
-      if (buttonText === 'Play Random Song') {
-          playRandomTrack();
-      } else if (buttonText === 'Check Answer') {
-          checkAnswer();
-      } else if (buttonText === 'Play Again') {
-          playRandomTrack();
-      }
+    if (buttonText === 'Play Random Song') {
+      playRandomTrack();
+    } else if (buttonText === 'Check Answer') {
+      checkAnswer();
+    } else if (buttonText === 'Play Again') {
+      playRandomTrack();
+    }
   }
 });
