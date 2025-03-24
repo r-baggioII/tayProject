@@ -681,7 +681,7 @@ document.querySelector('.controls').addEventListener('click', (event) => {
     if (buttonText === 'Play Random Song') {
       playRandomTrack();
     } else (buttonText === 'Check Answer') 
-      checkAnswer();
+      //checkAnswer();
       updateButtonVisibility('playing');
 
   }
