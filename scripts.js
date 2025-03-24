@@ -493,25 +493,25 @@ window.onSpotifyIframeApiReady = (IFrameAPI) => {
 
   const playRandomTrack = () => {
     if (!currentController) return;
-
+  
     // Clear any existing timeout
     if (playbackTimeout) {
       clearTimeout(playbackTimeout);
     }
-
+  
     // Stop any currently playing track
     currentController.pause();
-
+  
     randomAlbum = albums[getRandomIndex(albums)]; //gets a random album from the array of albums
     const randomAlbumArray = Object.values(randomAlbum); //turns the object into an array
     randomTrack = randomAlbumArray[getRandomIndex(randomAlbumArray)]; //gets a random track from the album
-
-
+  
     // Load and play the new track
     currentController.loadUri(randomTrack);
     currentController.play();
-
-
+  
+    updateButtonVisibility('playing');
+  
     // Set timeout to stop after 5 seconds
     playbackTimeout = setTimeout(() => {
       currentController.pause();
@@ -536,6 +536,26 @@ window.onSpotifyIframeApiReady = (IFrameAPI) => {
 
   // Create the controller
   IFrameAPI.createController(element, options, callback);
+};
+
+const updateButtonVisibility = (state) => {
+  const playRandomButton = document.getElementById('next-button');
+  const checkAnswerButton = document.getElementById('check-button');
+
+  switch(state) {
+    case 'initial':
+      playRandomButton.style.display = 'inline-block';
+      checkAnswerButton.style.display = 'none';
+      break;
+    case 'playing':
+      playRandomButton.style.display = 'none';
+      checkAnswerButton.style.display = 'inline-block';
+      break;
+    case 'answered':
+      playRandomButton.style.display = 'inline-block';
+      checkAnswerButton.style.display = 'none';
+      break;
+  }
 };
 const message = "Guess the song!! (Taylor Swift Edition)"; // The message to display
 
@@ -621,9 +641,12 @@ function checkAnswer() {
   if (selectedTrack === currentTrackName) {
     updateScore();
     displayMessage('Correct! You guessed the track!', 'success');
+
   } else {
     displayMessage('Incorrect. Try again!', 'error');
   }
+  updateButtonVisibility('answered');
+
 }
 // Update score and display
 function updateScore() {
@@ -631,6 +654,7 @@ function updateScore() {
   let score = parseInt(scoreElement.innerText, 10) || 0;
   score += 13;
   scoreElement.innerText = score;
+
 
   const bestScoreElement = document.getElementById('Bestscore');
   let bestScore = parseInt(bestScoreElement.innerText, 10) || 0;
@@ -651,15 +675,26 @@ function displayMessage(message, type) {
 }
 // Add event listeners
 document.querySelector('.controls').addEventListener('click', (event) => {
-  if (event.target.id === 'next-button') {
+  if (event.target.id === 'check-button') {
     const buttonText = event.target.innerText;
 
     if (buttonText === 'Play Random Song') {
       playRandomTrack();
-    } else if (buttonText === 'Check Answer') {
+    } else (buttonText === 'Check Answer') 
       checkAnswer();
-    } else if (buttonText === 'Play Again') {
+      updateButtonVisibility('playing');
+
+  }
+});
+
+// Add event listeners
+document.querySelector('.controls').addEventListener('click', (event) => {
+  if (event.target.id === 'check-button') {
+    if (event.target.innerText === 'Play Random Song') {
       playRandomTrack();
+    } else if (event.target.innerText === 'Check Answer') {
+      checkAnswer();
+
     }
   }
 });

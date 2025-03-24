@@ -75,3 +75,22 @@ const torturedPoets = [
 
 
 
+  const updateButtonVisibility = (state) => {
+    const playRandomButton = document.getElementById('next-button');
+    const checkAnswerButton = document.getElementById('check-button');
+
+    switch(state) {
+      case 'initial':
+        playRandomButton.style.display = 'inline-block';
+        checkAnswerButton.style.display = 'none';
+        break;
+      case 'playing':
+        playRandomButton.style.display = 'none';
+        checkAnswerButton.style.display = 'inline-block';
+        break;
+      case 'answered':
+        playRandomButton.style.display = 'inline-block';
+        checkAnswerButton.style.display = 'none';
+        break;
+    }
+  };
