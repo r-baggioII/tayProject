@@ -522,41 +522,67 @@ window.onSpotifyIframeApiReady = (IFrameAPI) => {
   const callback = (EmbedController) => {
     currentController = EmbedController;
 
+    updateButtonVisibility('initial');
+
     // Add event listener to the Next button
     const nextButton = document.getElementById('next-button');
+    const playAgainButton = document.getElementById('playAgain-button');
+    
     if (nextButton) {
       // Remove any existing listeners first
       nextButton.replaceWith(nextButton.cloneNode(true));
       const newNextButton = document.getElementById('next-button');
-      newNextButton.addEventListener('click', playRandomTrack);
+      newNextButton.addEventListener('click', playRandomTrack);      
+
     } else {
       console.error("Next button element not found.");
     }
+
+    if (playAgainButton) {
+      // Remove any existing listeners first
+      playAgainButton.replaceWith(playAgainButton.cloneNode(true));
+    
+      // Reassign the new button reference
+      const newPlayAgainButton = document.getElementById('playAgain-button');
+      newPlayAgainButton.addEventListener('click', playRandomTrack);      
+    
+    } else {
+      console.error("Play Again button element not found.");
+    }
+    
+    
   };
 
   // Create the controller
   IFrameAPI.createController(element, options, callback);
 };
 
+
+
 const updateButtonVisibility = (state) => {
   const playRandomButton = document.getElementById('next-button');
   const checkAnswerButton = document.getElementById('check-button');
+  const playAgainButton = document.getElementById('playAgain-button');
 
   switch(state) {
     case 'initial':
       playRandomButton.style.display = 'inline-block';
       checkAnswerButton.style.display = 'none';
+      playAgainButton.style.display = 'none'; 
       break;
     case 'playing':
       playRandomButton.style.display = 'none';
       checkAnswerButton.style.display = 'inline-block';
+      playAgainButton.style.display = 'inline-block'; 
       break;
     case 'answered':
       playRandomButton.style.display = 'inline-block';
       checkAnswerButton.style.display = 'none';
+      playAgainButton.style.display = 'none'; 
       break;
   }
 };
+
 const message = "Guess the song!! (Taylor Swift Edition)"; // The message to display
 
 const displayElement = document.getElementById('message');
@@ -621,6 +647,8 @@ function updateTracks() {
     trackSelect.appendChild(option);
   }
 }
+
+
 function checkAnswer() {
   const selectedTrack = document.getElementById('track').value;
 
@@ -680,8 +708,7 @@ document.querySelector('.controls').addEventListener('click', (event) => {
 
     if (buttonText === 'Play Random Song') {
       playRandomTrack();
-    } else (buttonText === 'Check Answer') 
-      //checkAnswer();
+    }else (buttonText === 'Check Answer') 
       updateButtonVisibility('playing');
 
   }
@@ -698,3 +725,5 @@ document.querySelector('.controls').addEventListener('click', (event) => {
     }
   }
 });
+ 
+

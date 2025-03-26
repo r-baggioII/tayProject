@@ -1,60 +1,45 @@
 .episodes {
+  display: flex;
+  flex-direction: column;
+}
+
+.track {  
+  min-width: max-content;
+  margin-bottom: .8rem;
+  padding: .8rem 1rem;
+  border-radius: 10px;
+  border: 0;
+  background: #462342;
+  color: #fff;
+  cursor: pointer;
+}
+.tracks {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+
+}
+
+.episode:hover {
+  background: #1Db954;
+}
+
+@media screen and (min-width: 860px) {
+  body {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 1rem;
+    background-color: #BEA7C4; 
+    font-family: Arial, sans-serif;
+    color: #333;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
   }
+}
 
-  .track {
-    min-width: max-content;
-    margin-bottom: .8rem;
-    padding: .8rem 1rem;
-    border-radius: 10px;
-    border: 0;
-    background: #462342;
-    color: #fff;
-    cursor: pointer;
-  }
-  .tracks {
-    display: flex;
-    flex-direction: column;
-    gap: .8rem;
-
-  }
-
-  .episode:hover {
-    background: #1Db954;
-  }
-
-  @media screen and (min-width: 860px) {
-    body {
-      display: flex;
-      flex-direction: row;
-      gap: 1rem;
-      background-color: #BEA7C4; 
-      font-family: Arial, sans-serif;
-      color: #333;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-  }
-
-  #next-button {
-    background-color: #62466B; /* Spotify Green */
-    color: #fbe5ff; /* White text */
-    border: none;
-    border-radius: 50px; /* Rounded corners */
-    padding: 10px 20px; /* Size */
-    font-size: 16px; /* Text size */
-    font-weight: bold; /* Bold text */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    font-family: 'Playfair Display', serif;
-    font-size: large;
-
-  }
-  
-  #check-button {
+#next-button {
   background-color: #62466B; /* Spotify Green */
   color: #fbe5ff; /* White text */
   border: none;
@@ -69,7 +54,36 @@
 
 }
 
-  
+#check-button {
+  background-color: #62466B; /* Spotify Green */
+  color: #fbe5ff; /* White text */
+  border: none;
+  border-radius: 50px; /* Rounded corners */
+  padding: 10px 20px; /* Size */
+  font-size: 16px; /* Text size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Playfair Display', serif;
+  font-size: large;
+}
+
+
+#playAgain-button {
+  background-color: #62466B; /* Spotify Green */
+  color: #fbe5ff; /* White text */
+  border: none;
+  border-radius: 50px; /* Rounded corners */
+  padding: 10px 20px; /* Size */
+  font-size: 16px; /* Text size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Playfair Display', serif;
+  font-size: large;
+}
+
+
 #next-button:hover {
   background-color: #1aa34a; /* Darker green on hover */
   transform: scale(1.05); /* Slightly larger on hover */
@@ -79,7 +93,29 @@
   background-color: #62466B; /* Even darker green on click */
   transform: scale(0.95); /* Slightly smaller on click */
 }
-  
+
+#check-button:hover {
+  background-color: #1aa34a; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly larger on hover */
+}
+
+#check-button:active {
+  background-color: #62466B; /* Even darker green on click */
+  transform: scale(0.95); /* Slightly smaller on click */
+}
+
+#playAgain-button:hover {
+  background-color: #1aa34a; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly larger on hover */
+}
+
+#playAgain-button:active {
+  background-color: #62466B; /* Even darker green on click */
+  transform: scale(0.95); /* Slightly smaller on click */
+}
+
+
+
 #message-container {
   position: absolute;
   display: flex;
