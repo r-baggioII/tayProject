@@ -15,6 +15,7 @@ const reputation = {
   "Call It What You Want": "spotify:track:1GwMQaZz6Au3QLDbjbMdme", //Call It What You Want
   "New Year's Day": "spotify:track:7F5oktn5YOsR9eR5YsFtqb", //New Year's Day
 };
+
 const red = {
   "State of Grace": "spotify:track:6lzc0Al0zfZOIFsFvBS1ki",
   "Red": "spotify:track:4OAuvHryIVv4kMDNSLuPt6",
@@ -25,12 +26,12 @@ const red = {
   "I Almost Do": "spotify:track:2r9CbjYgFhtAmcFv1cSquB",
   "We Are Never Ever Getting Back Together": "spotify:track:5YqltLsjdqFtvqE7Nrysvs",
   "Stay Stay Stay": "spotify:track:7eQj6r5PIdYKEIZjucBMcq",
-  "The Last Time (featuring Gary Lightbody of Snow Patrol)": "spotify:track:7eQj6r5PIdYKEIZjucBMcq",
-  "Holy Ground": "spotify:track:0y6kdSRCVQhSsHSpWvTUm7",
-  "Sad Beautiful Tragic": "spotify:track:7J4b3LVCIGO4CMBDFLPoP6",
-  "The Lucky One": "spotify:track:73qMN9bXy7MSPwwGfH3wQr",
-  "Everything Has Changed (featuring Ed Sheeran)": "spotify:track:4e5ayHsOLJNLTGfjau2mEw",
-  "Starlight": "spotify:track:7qEUFOVcxRI19tbT68JcYK",
+  "The Last Time (featuring Gary Lightbody of Snow Patrol)": "spotify:track:0y6kdSRCVQhSsHSpWvTUm7",
+  "Holy Ground": "spotify:track:7J4b3LVCIGO4CMBDFLPoP6",
+  "Sad Beautiful Tragic": "spotify:track:73qMN9bXy7MSPwwGfH3wQr",
+  "The Lucky One": "spotify:track:4e5ayHsOLJNLTGfjau2mEw",
+  "Everything Has Changed (featuring Ed Sheeran)": "spotify:track:7qEUFOVcxRI19tbT68JcYK",
+  "Starlight": "spotify:track:7A2cNLRT0YJc1yjxHlKihs",
   "Begin Again": "spotify:track:05GsNucq8Bngd9fnd4fRa0",
   "The Moment I Knew": "spotify:track:0NRHj8hDwwmSPaA41o379r",
   "Come Back... Be Here": "spotify:track:0NRHj8hDwwmSPaA41o379r",
@@ -47,6 +48,7 @@ const red = {
   "The Very First Night": "spotify:track:6pYNq0ZwpPVazKzsqpf0G8",
   "All Too Well (10 Minute Version)": "spotify:track:5enxwA8aAbwZbf5qCHORXi"
 };
+
 const speakNow = {
   "Mine": "spotify:track:7G0gBu6nLdhFDPRLc0HdDG",
   "Sparks Fly": "spotify:track:3MytWN8L7shNYzGl4tAKRp",
@@ -118,7 +120,7 @@ const lover = {
 const torturedPoets = {
   "Fortnight": "spotify:track:6dODwocEuGzHAavXqTbwHv",
   "The Tortured Poets Department ": "spotify:track:4PdLaGZubp4lghChqp8erB",
-  " My Boy Only Breaks His Favorite Toys": "spotify:track:7uGYWMwRy24dm7RUDDhUlD", //
+  "My Boy Only Breaks His Favorite Toys": "spotify:track:7uGYWMwRy24dm7RUDDhUlD", //
   "Down Bad": "spotify:track:1kbEbBdEgQdQeLXCJh28pJ", // 
   "So Long London": "spotify:track:7wAkQFShJ27V8362MqevQr", // 
   "But Daddy I Love Him": "spotify:track:4QMgEffJQuKtjCNvqfRZ0m", // 
@@ -128,12 +130,12 @@ const torturedPoets = {
   "Who's Afraid of Little Old Me": "spotify:track:2d8UxVNhJinc8uat9PoM9y", // 
   "I Can Fix Him (No Really I Can)": "spotify:track:5chnRTB9qMK3W1M41SnU9s", // 
   "loml": "spotify:track:3YkNIrAvbKNrrwwEd7NVLl", // 
-  " I Can Do It With a Broken Heart": "spotify:track:2fPvQfGQEZOKtJ9qXeL4x8", //
-  " The Smallest Man Who Ever Lived": "spotify:track:1xtw1krCR6Dw2KwkXw5z63", //
+  "I Can Do It With a Broken Heart": "spotify:track:2fPvQfGQEZOKtJ9qXeL4x8", //
+  "The Smallest Man Who Ever Lived": "spotify:track:1xtw1krCR6Dw2KwkXw5z63", //
   "The Alchemy": "spotify:track:1tuNqJOtRQVHvONR8Lg3MZ", // 
   "Clara Bow": "spotify:track:4d9PtIEVij9jW5OaLinH66", // 
   "The Black Dog": "spotify:track:62E2nR0od0M5HYxuYLaDz7", // 
-  "Imgonnageyoback": "spotify:track:1kcwpPDQnqEqmezzXdJTCP", // 
+  "imgonnagetyouback": "spotify:track:1kcwpPDQnqEqmezzXdJTCP", // 
   "The Albatross": "spotify:track:4EF6IyONolQy0bIQXm2EmX", // 
   "Chloe or Sam or Sophia or Marcus": "spotify:track:1rmEsOezwf2lmIZTMAO5Ag", // 
   "How Did It End?": "spotify:track:5Bedn0svl0ZD7RGmJkmKKw", // 
@@ -148,6 +150,7 @@ const torturedPoets = {
   "Robin": "spotify:track:2CnjDMdpRjlWv04Xk3s6MW", // 
   "The Manuscript": "spotify:track:1DTRUYVd8rYpla9hhVVwjo", // 
 };
+
 const evermore = {
   "willow": "spotify:track:2gVhfX2Gy1T9kDuS9azrF7", //willow
   "champagne problems": "spotify:track:1gcyHQpBQ1lfXGdhZmWrHP", //champagne problems
@@ -212,6 +215,55 @@ const midnights = {
   "Karma(feat.Ice Spice)": "spotify:track:4i6cwNY6oIUU2XZxPIw82Y"
 };
 
+const Fearless = {
+  "Fearless (Taylor’s Version)": "spotify:track:77sMIMlNaSURUAXq5coCxE" ,
+  "Fifteen (Taylor’s Version)" : "spotify:track:2nqio0SfWg6gh2eCtfuMa5" ,
+  "Love Story (Taylor’s Version)" : "spotify:track:6YvqWjhGD8mB5QXcbcUKtx", 
+  "Hey Stephen (Taylor’s Version)":"spotify:track:550erGcdD9n6PnwxrvYqZT"  ,
+  "White Horse (Taylor’s Version)" :"spotify:track:5YL553x8sHderRBDlm3NM3",
+  "You Belong With Me (Taylor’s Version)" :"spotify:track:1qrpoAMXodY6895hGKoUpA",
+  "Breathe (feat. Colbie Caillat) (Taylor’s Version)" :"spotify:track:7HC7R2D8WjXVcUHJyEGjRs",
+  "Tell Me Why (Taylor’s Version)" :"spotify:track:0k0vFacOHNuArLWMiH60p7",
+  "You’re Not Sorry (Taylor’s Version)" :"spotify:track:6iiAfo4wTA2CVC3Uwx9uh8",
+  "The Way I Loved You (Taylor’s Version)" :"spotify:track:22bPsP2jCgbLUvh82U0Z3M",
+  "Forever & Always (Taylor’s Version)" :"spotify:track:1msEuwSBneBKpVCZQcFTsU",
+  "The Best Day (Taylor’s Version)" :"spotify:track:6ON9UuIq49xXY9GPmHIYRp",
+  "Change (Taylor’s Version)" :"spotify:track:3ExweHKZF9B752DPQByRVT",
+  "Jump Then Fall (Taylor’s Version)" :"spotify:track:2m3ObD945KvpE5y9A1eUWm",
+  "Untouchable (Taylor’s Version)" :"spotify:track:0tQ9vBYpldCuikPsbgOVKA",
+  "Forever & Always (Piano Version) (Taylor’s Version)" :"spotify:track:01QdEx6kFr78ZejhQtWR5m",
+  "Come In With The Rain (Taylor’s Version)" :"spotify:track:1n2wszmJyVkw6FHqyLnQsY",
+  "Superstar (Taylor’s Version)" :"spotify:track:51A8eKvvZz9uydvIZ7xRSV",
+  "The Other Side Of The Door (Taylor’s Version)" :"spotify:track:1cSFlSBdpT4F5vb1frQ231",
+  "Today Was A Fairytale (Taylor’s Version)" :"spotify:track:2JoJrsEV15OzbijS47lids",
+  "You All Over Me (feat. Maren Morris) (Taylor’s Version) (From The Vault)" :"spotify:track:4CHpVfAhuxNJ3ibExe6kxO",
+  "Mr. Perfectly Fine (Taylor’s Version) (From The Vault)" :"spotify:track:2CYVETnhM9aytqrazYYwrK",
+  "We Were Happy (Taylor’s Version) (From The Vault)" :"spotify:track:34V9RiEPe8MNdU32qJsJa1",
+  "That’s When (feat. Keith Urban) (Taylor’s Version) (From The Vault)":"spotify:track:7eResoqEJJAVTkQYSqvO3P",
+  "Don’t You (Taylor’s Version) (From The Vault)" :"spotify:track:4uuEGH5SVuzkkSFjo2DEiY",
+  "Bye Bye Baby (Taylor’s Version) (From The Vault)" :"spotify:track:4qUijfYU8EoIWiY6oSyrgT"
+};
+
+const TaylorSwift = {
+  "Tim McGraw": "spotify:track:2Fn01AIMyHbha2ceNQeOqw",
+  "Picture To Burn": "spotify:track:4BYejINgfZF0qKDMEH2cim",
+  "Teardrops On MyGuitar": "spotify:track:2TF4UtYreqNbQ6Z9AccldU",
+  "A Place In This World": "spotify:track:1oR4MUBpyNrAViC8wPNpfm",
+  "Cold As You": "spotify:track:569sXXQ7t0jSdqHooi2yqs",
+  "The Outside": "spotify:track:5Tj2MqcFMf60CaGsKbM1aq",
+  "Tied Together With A Smile": "spotify:track:2zzxwmoOBnXDT0KnJsoIWk",
+  "Stay Beautiful": "spotify:track:41sjzdjScVwnxnxADElts6",
+  "Should've Said No": "spotify:track:6CdaXOq1MWe2JHDalTG01d",
+  "Mary's Song (Oh My My My)": "spotify:track:2O8sogKJCfVZ4rotBv1vVF",
+  "Our Song": "spotify:track:1j6gmK6u4WNI33lMZ8dC1s",
+  "Im Only Me When Im With You": "spotify:track:7CzxXgQXurKZCyHz9ufbo1",
+  "Invisible": "spotify:track:1k3PzDNjg38cWqOvL4M9vq",
+  "A Perfectly GoodHeart": "spotify:track:0YgHuReCSPwTXYny7isLja",
+  "Teardrops On My Guitar-Pop Version": "spotify:track:1hxLyjC9D9Jpw6EAPKqWv4"
+};
+
+
+
 const musicDatabase = {
   "Taylor Swift": [
     "Tim McGraw",
@@ -228,7 +280,7 @@ const musicDatabase = {
     "I'm Only Me When I'm with You",
     "Invisible",
     "A Perfectly Good Heart",
-    "Teardrops on My Guitar"
+    "Teardrops on My Guitar-Pop Version"
   ],
   "Fearless (Taylor's Version)": [
     "Fifteen",
@@ -455,7 +507,7 @@ const musicDatabase = {
     "The Alchemy",
     "Clara Bow",
     "The Black Dog",
-    "Imgonnagetyouback",
+    "imgonnagetyouback",
     "The Albatross",
     "Chloe or Sam or Sophia or Marcus",
     "How Did It End?",
@@ -471,7 +523,7 @@ const musicDatabase = {
   ],
 };
 
-export {reputation,red,speakNow,folklore,evermore,midnights,T1989,lover,torturedPoets,musicDatabase};
+export {reputation,red,speakNow,folklore,evermore,midnights,T1989,lover,torturedPoets,TaylorSwift,Fearless,musicDatabase};
 
 
 
