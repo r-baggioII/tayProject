@@ -1,9 +1,9 @@
-import { reputation,red,T1989,midnights,folklore,evermore,torturedPoets,lover,speakNow,musicDatabase } from "./albums.js"; // Use relative path
+import { reputation,red,T1989,midnights,folklore,evermore,torturedPoets,lover,speakNow,Fearless,TaylorSwift,musicDatabase } from "./albums.js"; // Use relative path
 
 let randomTrack;
 let randomAlbum;
 
-const albums = [reputation, red, speakNow, T1989, lover, torturedPoets, evermore, folklore, midnights];
+const albums = [reputation, red, speakNow, T1989, lover, torturedPoets, evermore, folklore, midnights,Fearless,TaylorSwift];
 
 window.onSpotifyIframeApiReady = (IFrameAPI) => {
   const element = document.getElementById('embed-iframe');
