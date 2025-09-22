@@ -48,7 +48,7 @@ window.onSpotifyIframeApiReady = (IFrameAPI) => {
     // Set timeout to stop after 5 seconds
     playbackTimeout = setTimeout(() => {
       currentController.pause();
-    }, 5000);
+    }, 2000);
   };
 
   // Controller callback
@@ -80,7 +80,7 @@ window.onSpotifyIframeApiReady = (IFrameAPI) => {
           currentController.play();
           playbackTimeout = setTimeout(() => {
             currentController.pause();
-          }, 5000);
+          }, 2000);
           
         }
       });
